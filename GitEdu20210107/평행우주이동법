@@ -8,6 +8,10 @@ git checkout 이름 : 해당 이름의 branch로 이동
 #5, #6을 한번에 진행하는 방법
 git checkout -b 이름 : 브랜치 생성 및 이동
 
+원격(GitHub)의 브랜치 가져오기
+git checkout -b 설정할_브랜치이름 가져올_브랜치이름(ex: origin/my-idea) : GitHub에 있는 브랜치를 가져와서 새로 브랜치 이름을 작성 후 실행
+(새로 가져오고 Push 할 시 GitHub엔 가져온 브랜치이름(my-idea)와 가져와서 수정한 새로운 브랜치, 총 2개가 push된 상태가 됨)
+
 
 1 branch 에 2branch을 병합(옮기기 전에 커밋 꼭 할 것!)
 git checkout 1branch : 1브랜치로 이동
