@@ -15,7 +15,7 @@ git status : 파일 상태보기
 git commit -m "커밋내용" : 커밋추가
 
 git remote add origin 주소 : 첫 커밋할 때만 사용
-git push -u origin master: GitHub에 파일이랑 커밋추가
+git push -u origin push할_브랜치: GitHub에 파일이랑 커밋추가
 git pull : GitHub에서 다운로드
 
 git log : 커밋한 로그 보기
