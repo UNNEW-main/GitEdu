@@ -1,0 +1,20 @@
+파일을 그대로 복사해 클론(브랜치)을 만듬(기본 branch는 master)
+
+branch 만들기
+git branch : branch 목록 확인하기
+git branch 이름 : 해당 이름의 branch 작성(파생의 파생도 가능)
+git checkout 이름 : 해당 이름의 branch로 이동
+
+
+
+1 branch 에서 2branch로 내용 옮기기(옮기기 전에 커밋 꼭 할 것!)
+git checkout 1branch : 1브랜치로 이동
+git merge 2branch : 2브랜치내용을 받음
+:wq :저장하고 나가기
+
+
+git log --graph --all --decorate : log를 시각적으로 이쁘게 보여줌
+
+git rebase 이름 : 분기로 안나눠지고 병합 후 깔끔하게 1줄이 됨(merge로 하면 분기로 나눠짐)
+
+git branch -D 이름 : 해당 이름의 브랜치 삭제
