@@ -2,7 +2,7 @@ main 입니다.
 Now we start Git Hub Test.
 
 cd c:\Folder :해당 폴더로 이동
-git init : git 시작
+git init : git 시작(git 저장소 생성)
 git remote add origin 주소 : origin에 깃허브 추가(연결)
 
 git --version : 현재 git버전 확인
@@ -13,7 +13,9 @@ git config --global user.name 이름 : 이름 등록
 git add -A : 파일 전부 스테이지에 넣기
 git status : 파일 상태보기
 git commit -m "커밋내용" : 커밋추가
-git push origin master: GitHub에 파일이랑 커밋추가
+
+git remote add origin 주소 : 첫 커밋할 때만 사용
+git push -u origin master: GitHub에 파일이랑 커밋추가
 git pull : GitHub에서 다운로드
 
 git log : 커밋한 로그 보기
