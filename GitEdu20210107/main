@@ -8,7 +8,7 @@ git remote add origin 주소 : origin에 깃허브 추가(연결)
 git --version : 현재 git버전 확인
 
 git config --global user.email 이메일 : 이메일 등록
-git config --global user.nam 이름 : 이름 등록
+git config --global user.name 이름 : 이름 등록
 
 git add -A : 파일 전부 스테이지에 넣기
 git status : 파일 상태보기
