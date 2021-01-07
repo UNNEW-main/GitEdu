@@ -1,0 +1,8 @@
+main 입니다.
+Now we start Git Hub Test.
+
+Git add -A : 파일 전부 커밋목록에 넣기
+Git status : 파일 상태보기
+Git commit -m "제목" : 커밋하기
+Git push : GitHub에 업로드
+Git pull : GitHub에서 다운로드
