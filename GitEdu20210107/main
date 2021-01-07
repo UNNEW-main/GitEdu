@@ -1,8 +1,17 @@
 main 입니다.
 Now we start Git Hub Test.
 
-Git add -A : 파일 전부 커밋목록에 넣기
-Git status : 파일 상태보기
-Git commit -m "제목" : 커밋하기
-Git push : GitHub에 업로드
-Git pull : GitHub에서 다운로드
+cd c:\Folder :해당 폴더로 이동
+git init : git 시작
+git remote add origin 주소 : origin에 깃허브 추가(연결)
+
+git --version : 현재 git버전 확인
+
+git config --global user.email 이메일 : 이메일 등록
+git config --global user.nam 이름 : 이름 등록
+
+git add -A : 파일 전부 스테이지에 넣기
+git status : 파일 상태보기
+git commit -m "커밋내용" : 커밋추가
+git push origin master: GitHub에 파일이랑 커밋추가
+git pull : GitHub에서 다운로드
