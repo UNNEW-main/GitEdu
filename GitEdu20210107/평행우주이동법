@@ -1,15 +1,17 @@
 파일을 그대로 복사해 클론(브랜치)을 만듬(기본 branch는 master)
 
 branch 만들기
-git branch : branch 목록 확인하기
+git branch : branch 목록 확인하기(git branch -a : 로컬 및 원격(GitHub)의 브랜치목록을 모두 확인)
 git branch 이름 : 해당 이름의 branch 작성(파생의 파생도 가능)
 git checkout 이름 : 해당 이름의 branch로 이동
 
+#5, #6을 한번에 진행하는 방법
+git checkout -b 이름 : 브랜치 생성 및 이동
 
 
-1 branch 에서 2branch로 내용 옮기기(옮기기 전에 커밋 꼭 할 것!)
+1 branch 에 2branch을 병합(옮기기 전에 커밋 꼭 할 것!)
 git checkout 1branch : 1브랜치로 이동
-git merge 2branch : 2브랜치내용을 받음
+git merge 2branch : 2브랜치내용을 병합
 :wq :저장하고 나가기
 
 
