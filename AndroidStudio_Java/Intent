@@ -6,7 +6,7 @@ public void onButton2Clicked(View V){
     startActivity(intent); //엑티비티 실행
 }
 
-버튼(onButton2Clicked)을 클릭하면 주어진 주소(http://m.naver.com)로 인터넷 실행
+//버튼(onButton2Clicked)을 클릭하면 주어진 주소(http://m.naver.com)로 인터넷 실행
 
 
 //전화걸기
@@ -14,4 +14,4 @@ public void onButton3Clicked(View v){
     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:010-0000-0000"));
     startActivity(intent); //엑티비티 실행
 }
-버튼(onButton3Clicked)을 클릭하면 주어진 번호(010-0000-0000)로 전화 실행
+//버튼(onButton3Clicked)을 클릭하면 주어진 번호(010-0000-0000)로 전화 실행

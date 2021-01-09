@@ -1,0 +1,116 @@
+
+[1]
+손가락이 화면을 눌름, 움직임, 뗌 3가지로 구분하게 만들어줌
+
+MainActivity.java 에서 작성
+
+뷰 하나를 생성, 텍스트뷰 하나를 생성 
+뷰를 누르거나 움직이거나 떼면 텍스트에서 그 내용을 주소값을 포함하여 출력함
+
+//MainActivity.java 내용
+public class MainActivity extends ~~~{ //클래스
+    TextView textview; //텍스트뷰 변수 생성
+    
+    protected void onCreate(~~){ //메소드
+        ~~~~~~~
+        textView = findViewById(R.id.textView); //괄호안의 textView라는 id를 찾아 textView변수에 저장
+        View view = findViewById(R.id.view); //view 변수 생서 후 괄호안의 view라는 id를 찾아 view변수에 저장
+
+        view.setOnTouchListener(new View.OntouchListener(){ //view의 setOnTouchListener 함수호출 후 OntouchListener라는 인터페이스를 구현
+            public boolean onTouch(View v, MotionEvent event){ //onTouch는 터치가 구현될때마다 MotionEvent event로 전달함
+                int action = event.getAction(); //어떤상태로 호출됐는지 구분하는 변수 선언
+                float curX = event.getX(); //좌표값 받아오는 변수 선언
+                float curY = event.getY(); //좌표값 받아오는 변수 선언
+
+                if(action == MotionEvent.ACTION_DOWN){ //터치
+                    println("손가락눌림: " + curX + ", " + curY ); //println함수 호출
+                }else if(action==MotionEvent.ACTION_MOVE){
+                    println("손가락 움직임: " +curX + ", " + curY);
+                }else if(action==MotionEvent.ACTION_UP){
+                    println("손가락 뗌: "+curX+", "+curY);
+                }
+                return true;
+            }
+        });
+    }
+    public void println(String data){ //println함수 선언
+        textView.append(data + "\n"); //data값을 받아와 textView에 출력함
+    }
+}
+
+//끝
+
+
+[2]
+제스쳐를 탐지함(누름, 꾹누름, 슬래시)
+위의 [1]과 유사
+
+
+public class MainActivity extends ~~~~ {
+    TextView textView; //텍스트뷰 변수 선언
+    GestureDetector detector; //제스쳐 변수 선언
+
+    protected void onCreate(~~~) {
+        ~~~
+
+        textView = findViewById(R.id.textView); //텍스트뷰변수에 텍스트뷰를 입력
+        View view2 = findViewById(R.id.view2); //view2 변수에 view2를 입력
+
+        view2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                detector.onTouchEvent(event); //미리 선언한 변수 detector에 넘김
+                return true;
+            }
+        });
+
+        detector = new GestureDetector(this, new GestureDetector.OnGestureListener() {
+            @Override
+            public boolean onDown(MotionEvent e) { //한번 누름
+                println("onDown 호출됨");
+                return true;
+            }
+
+            @Override
+            public void onShowPress(MotionEvent e) { }
+
+            @Override
+            public boolean onSingleTapUp(MotionEvent e) {return false;}
+
+            @Override
+            public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) { return false; }
+
+            @Override
+            public void onLongPress(MotionEvent e) { println("onLongPress 호출됨"); } //길게누름
+
+            @Override
+            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) { //슬래시 함(시작과 끝지점 좌표출력)
+                println("onFling 호출됨" + velocityX +"," +velocityY);
+                return true;
+            }
+        });
+    }
+    public void println(String data){ //println함수
+        textView.append(data + "\n");
+    }
+}
+
+
+
+[3]
+단말기 뒤로가기버튼을 못누르게 하기
+
+MainActivity.java 창에서 오른쪽클릭 -> generate -> 오버라이드 메소드 클릭(오버라이드된 메소드 불러오기) -> onKeyDown 클릭
+
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+    if(keyCode == KeyEvent.KEYCODE_BACK){ //BACK 은 뒤로가기버튼을 의미
+        println("시스템 [back] 버튼이 눌렸어요.");
+       return true;
+    }
+    return false;
+}
+
+//onBackPressed 라는 것도 있는데 상황에 따라 사용하면 됨
+
+[4]
+단말방향에 따라 바뀌는 이벤트

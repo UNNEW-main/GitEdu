@@ -29,3 +29,7 @@ public void changeImage(){
         imageIndex = 0;
     }
 }
+
+
+//ImageView 속성
+scaleType : 이미지를 크기에 맞춰서 보여줌(늘림, 맞춤 등)

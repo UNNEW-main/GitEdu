@@ -1,0 +1,20 @@
+activity_main.xml파일안에 버튼이나 텍스트뷰에 직접 텍스트를 넣을 수 있지만
+프로젝트파일/res/values/strings.xml 파일에서 코드를 입력 후 그 코드를 넣을 수 있다.
+사용이유: 다국어지원가능(values_KO, values_EN)
+
+//strings.xml
+<resources>
+    <string name="변수이름">텍스트내용</string> //activity_main.xml의 버튼이나 텍스트뷰의 텍스트칸에 '@string/변수이름' 을 입력하면 '텍스트내용' 이 나옴
+</resources>
+
+
+//텍스트뷰 속성
+maxLines 1: 글자수가 많으면 다음줄로 넘어가게 되는게 1로 설정 시 아무리 글자 수가 많아도 한줄로 표시됨.
+lineSpacingExtra 10sp : 줄간격 띄우기
+layout_margin : 근처의 뷰와 간격 벌리기
+
+
+
+//잡지식
+Buttons/RadioGroup은 안에 RadioButton을 넣어야 사용할 수 있다.
+

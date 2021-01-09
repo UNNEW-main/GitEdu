@@ -1,8 +1,8 @@
 버튼(onButton1Clicked)을 누르면 알림메세지가 뜸.
 
 public void onButton1Clicked(View v){
-    Toast.makeText(context:this, text: "확인버튼 눌림", Toast.Lenght_LONG).show();
+    Toast.makeText(context:this, text: "확인버튼 눌림", Toast.Lenght_LONG).show(); //context: 는 오른쪽 this, 을 입력하면 자동 입력됨.
 }
 
-"확인버튼 눌림" 이 메세지로 뜸.
-Lenght_LONG 을 _SHORT로 바꾸면 메세지뜨는 시간이 짧아짐.
+//"확인버튼 눌림" 이 메세지로 뜸.
+//Lenght_LONG 을 _SHORT로 바꾸면 메세지뜨는 시간이 짧아짐.
