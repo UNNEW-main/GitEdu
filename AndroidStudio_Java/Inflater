@@ -1,0 +1,46 @@
+인플레이션 = java코드에 있는 내용을 메모리에 넣어서 xml화면에 띄우는 것.
+
+[1]
+activity_main.xml 뿐만 아니라 다른 xml파일 띄우기
+activity_menu.xml 화면에 버튼을 누르면 레이아웃에 sub1.xml화면 띄우게 하기
+
+프로젝트파일 app에서 오른쪽클릭 -> new -> Activity -> 원하는 프레임 -> MenuActivity.java생성 //생성될때 MenuActivity.xml이 자동생성 될꺼임
+프로젝트파일 app/res/layout 오른쪽클릭 -> new ->레이아웃리소스파일 ->sub1.xml생성
+
+
+//MenuActivity.java 파일
+public class MenuActivity extends AppCompatActivity {
+    LinearLayout container;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu); //activity_menu화면 실행
+
+        container = findViewById(R.id.container); //container라는 레이아웃 찾기
+
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addLayout(); //함수 실행
+            }
+        });
+    }
+
+    public void addLayout(){
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(R.layout.sub1, container, true); //sub1 을 container에 inflate되면 띄우기(true)
+
+        Toast.makeText(this,"부분화면이 추가됨",Toast.LENGTH_SHORT).show();
+    }
+}
+
+
+[2]
+처음 앱이 실행될때 Main이 아닌 MenuActivity가 실행되게 하기
+
+프로젝트파일 app/manifests/AndroidManifest.xml파일 안에
+<activity android:name=".MainActivity">
+~~~
+</activity>
+에서 ".MainActivity"를 MenuActivity로 바꿔치기 하기

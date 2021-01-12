@@ -1,0 +1,38 @@
+[1]
+방향전환 & 방향전환해도 엑티브 사라지지않게 하기
+
+2개의 파일 수정필요
+프로젝트 파일 manifests/AndroidManifest.xml 클릭
+
+//AndroidManifest.xml파일
+<activity android:name=".MainActivity" 
+    android:configChanges="orientation|screenSize|keyboardHidden"> //orientation: 방향전환
+    <intent-filter>
+      ~~~~~~
+    </intent-filter>
+</activity>
+
+//MainActivity.java파일
+public void onConfigurationChanged(@NonNull Configuration newConfig) { //오버라이드 메소드호출
+    super.onConfigurationChanged(newConfig);
+    if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+        showToast("가로방향임");
+    }else if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+        showToast("세로방향임");
+    }
+}
+
+public void showToast(String data){
+    Toast.makeText(this,data,Toast.LENGTH_SHORT).show();
+}
+
+[2]
+앱 실행할때부터 가로방향으로 시작하기.
+
+//AndroidManifest.xml파일
+<activity android:name=".MainActivity" 
+    android:screenOrientation="landscape"> //가로방향으로 시작
+    <intent-filter>
+      ~~~~~~
+    </intent-filter>
+</activity>

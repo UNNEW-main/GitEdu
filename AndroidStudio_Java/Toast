@@ -1,3 +1,4 @@
+[1]
 버튼(onButton1Clicked)을 누르면 알림메세지가 뜸.
 
 public void onButton1Clicked(View v){
@@ -6,3 +7,21 @@ public void onButton1Clicked(View v){
 
 //"확인버튼 눌림" 이 메세지로 뜸.
 //Lenght_LONG 을 _SHORT로 바꾸면 메세지뜨는 시간이 짧아짐.
+
+
+[2]
+Toast 출현 위치 변경
+
+//MainActivity.java파일
+protected void onCreate(~~~~) {
+    ~~~~~
+    Button button = findViewById(R.id.button); //버튼찾기
+    button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Toast toastView = Toast.makeText(getApplicationContext(),"토스트메시지입니다.", Toast.LENGTH_SHORT); //메세지 내용
+            toastView.setGravity(Gravity.TOP|Gravity.LEFT,200,800); //메세지 위치변경
+            toastView.show();
+        }
+    });
+}

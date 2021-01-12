@@ -1,0 +1,37 @@
+알림메세지 띄우기
+
+//MainActivity.java 파일
+protected void onCreate(~~~~~) {
+    ~~~~~
+    Button button2 = findViewById(R.id.button); //버튼찾기
+    button2.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            showMessage(); //버튼누르면 함수 실행
+        }
+    });
+}
+public void showMessage(){ //알림메세지 띄울 함수
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setTitle("안내"); //제목
+    builder.setMessage("종료긔?"); //메세지내용
+    builder.setIcon(android.R.drawable.ic_dialog_alert); //제목옆에 띄울 아이콘사진
+
+    builder.setPositiveButton("긔", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            Toast.makeText(getApplicationContext(), "긔 버튼 눌림", Toast.LENGTH_SHORT);
+        } //'긔'를 누르면 "긔 버튼 눌림" Toast메세지가 뜸
+    });
+    builder.setNegativeButton("놉", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            Toast.makeText(getApplicationContext(),"놉 눌ㄹ림", Toast.LENGTH_SHORT);
+        }
+    });
+
+    AlertDialog dialog = builder.create();
+    dialog.show();
+}
+
+//코딩할땐 DialogInterface가 안먹혀서 Toast메시지가 안떴음
